@@ -1,0 +1,644 @@
+{
+  "bylaw": {
+    "name": "Township of Langley Small-Scale Multi-Unit Housing Bylaw No. 6020",
+    "purpose": "Amendments to Zoning Bylaw 1987 No. 2500 to incorporate small-scale multi-unit housing per Bill 44",
+    "adoption": {
+      "firstReading": "June 10, 2024",
+      "secondReading": "June 10, 2024",
+      "thirdReading": "June 10, 2024",
+      "noticeGiven": "June 3, 2024"
+    },
+    "referenceBylaws": {
+      "zoningBylaw": "Township of Langley Zoning Bylaw 1987 No. 2500",
+      "subdivisonAndDevelopment": "Subdivision and Development Servicing Bylaw 2019 No. 5382",
+      "transitOrientedArea": "Willowbrook Transit-Oriented Area Designation Bylaw No. 6021"
+    }
+  },
+  "generalProvisions": {
+    "subdivision": {
+      "explanation": "Changes to Section 110 - Subdivision Requirements",
+      "footnoteChanges": {
+        "R2Removed": "Deleted '557.4 m², or 18.3 m, 25 m' and associated footnotes",
+        "FH1Footnotes": "Deleted footnotes (2) and (3)",
+        "CD73": "Deleted 'single family' and inserted footnote 7",
+        "CD196": "Added footnote (7) 'For single family or small-scale, multi-unit housing developments'"
+      }
+    },
+    "accessoryBuildings": {
+      "subdivisionExemption": {
+        "condition": "If the accessory building is an accessory dwelling unit that meets the requirements of the Zoning Bylaw for a principal residential use on the newly created lot",
+        "exemptFromSubsections": ["a", "b", "c", "d", "e", "f"]
+      }
+    }
+  },
+  "smallScaleMultiUnitHousing": {
+    "definition": "Up to four dwelling units (attached or detached) on a single lot",
+    "eligibilityCriteria": {
+      "maxUnits": 4,
+      "maxUnitsIfSmallLot": 3,
+      "smallLotThresholdM2": 280.0,
+      "maxLotSizeM2": 4050.0,
+      "requiredConditions": [
+        {"condition": "Must be located within urban containment boundary", "required": true},
+        {"condition": "Must be serviced with municipal sanitary sewer", "required": true},
+        {"condition": "Must be serviced with municipal water system", "required": true},
+        {"condition": "Must not have heritage designation protection from before Dec 7, 2023", "required": true},
+        {"condition": "Must not be in Willowbrook Transit-Oriented Area (Bylaw No. 6021)", "required": true}
+      ]
+    }
+  },
+  "buildingTypes": {
+    "singleFamilyDwelling": {
+      "definition": "A detached dwelling unit and up to one secondary suite",
+      "secondarySuiteAllowed": true
+    },
+    "twoFamilyDwelling": {
+      "definition": "A building with two principal dwelling units joined by common wall",
+      "secondarySuiteAllowed": true,
+      "secondarySuiteMax": "One per principal dwelling unit"
+    },
+    "infillHousing": {
+      "definition": "One or more detached dwelling units on a lot with one retained dwelling",
+      "retainedDwellingType": ["single family dwelling", "two family dwelling"],
+      "retainedDwellingRequirement": "Must be constructed before adoption of Bylaw No. 6020"
+    },
+    "accessoryDwellingUnit": {
+      "definition": "A dwelling unit within an accessory building",
+      "allowedWhen": "Single family dwelling does not include a secondary suite"
+    },
+    "coachHouse": {
+      "definition": "An accessory dwelling unit located in second storey of detached garage"
+    }
+  },
+  "parkingRequirements": {
+    "residential": {
+      "spacesPerDwellingUnit": 1,
+      "minimumSpacesPerLot": 2,
+      "transitOrientedAreaExemption": {
+        "exempt": true,
+        "exceptDisabled": false,
+        "requiresEVCharging": true
+      }
+    },
+    "driveways": {
+      "cornerLots": {
+        "additionalAllowed": 2,
+        "conditions": [
+          {"condition": "Lot contains at least three dwelling units", "required": true},
+          {"condition": "Street abutting side lot line is local street or lane", "required": true},
+          {"condition": "Sum of all driveway widths on lot not more than 12 metres", "required": true}
+        ]
+      },
+      "locations": {
+        "coordinationRequired": "Driveway locations shall be co-ordinated to maximize on-street parking and street tree siting",
+        "referenceBylaw": "Subdivision and Development Servicing Bylaw 2019 No. 5382 as amended"
+      },
+      "extensions": {
+        "allowExtendIntoMunicipalStreet": true,
+        "limitedToBackOfSidewalk": true
+      }
+    },
+    "rearLoadedLots": {
+      "parkingLocationRequirements": [
+        "All parking spaces must be located in rear yard with access from a lane",
+        "No parking spaces shall directly access a highway other than a lane"
+      ]
+    },
+    "sightTriangleRestrictions": {
+      "frontLoadedCornerLot": {
+        "parkingNotAllowed": "No part of a parking space shall project in the triangular area created by a line joining two points measured at 7.0 metres from the projected lot lines abutting a street or lane"
+      },
+      "rearLoadedCornerLot": {
+        "parkingNotAllowed": "No part of a parking space shall project in the triangular area created by a line joining two points measured at 2.5 metres from the projected lot lines abutting a street and/or a lane"
+      }
+    },
+    "tandemParking": {
+      "allowed": true,
+      "note": "Definition amended by deleting the words 'in a garage or carport'"
+    }
+  },
+  "setbacks": {
+    "explanation": "Minimum distances buildings must be placed from property lines",
+    "generalProvisions": {
+      "cornerLotSightTriangle": {
+        "explanation": "On corner lots, no part of any building, structure or fence greater than 1 metre in height shall project into a triangular area",
+        "localStreetOrLane": {"distance": 6.0, "units": "metres"},
+        "arterialOrCollectorStreet": {"distance": 7.5, "units": "metres"}
+      },
+      "projectingFeatures": {
+        "explanation": "Access stairs, porches, verandahs and balconies may reduce setbacks",
+        "frontOrFlankingFacade": {"reducedSetback": 1.5, "units": "metres"},
+        "rearYardStairsAndLandings": {
+          "reducedSetback": 1.2, 
+          "units": "metres",
+          "conditions": [
+            "Only applies to stairs providing access to rear yard from first storey",
+            "Stair landing area not to exceed 1.5 square metres"
+          ]
+        }
+      },
+      "smallAccessoryBuildings": {
+        "floorAreaThreshold": 6.0,
+        "units": "square metres",
+        "reducedSetback": 0.6,
+        "unitsReducedSetback": "metres"
+      },
+      "partyWallProvision": {
+        "explanation": "On abutting lots, interior side lot line setback for accessory detached garages may be reduced",
+        "reducedSetback": 0,
+        "units": "metres",
+        "conditions": [
+          "Two garages abutting one another must be simultaneously designed",
+          "Building permits must be issued together",
+          "Garages must be constructed by same builder using party wall agreement",
+          "Eave and gutter must be setback minimum 0.45m or 0.3m from interior side lot line depending on zone"
+        ]
+      },
+      "parallelStreets": {
+        "explanation": "Where a lot fronts onto two parallel streets besides a lane",
+        "rearLotLineSetback": "Same as front lot line setback"
+      },
+      "garageDoorSetback": {
+        "frontLoaded": {"min": 4.5, "units": "metres"}
+      }
+    },
+    "zoneR1A": {
+      "frontLoadedLot": {
+        "principalBuilding": {
+          "frontLotLine": {"min": 6.0, "max": 7.5, "units": "metres"},
+          "rearLotLine": {"min": 3.0, "units": "metres"},
+          "sideInteriorLotLine": {"min": 1.2, "units": "metres"},
+          "sideCollectorOrArterialStreet": {"min": 3.0, "units": "metres"}
+        },
+        "accessoryDwellingUnit": {
+          "frontLotLine": {"min": 6.0, "units": "metres", "note": "Not permitted in front yard"},
+          "rearLotLine": {"min": 1.5, "units": "metres"},
+          "sideInteriorLotLine": {"min": 1.2, "units": "metres"},
+          "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+        }
+      },
+      "rearLoadedLot": {
+        "principalBuilding": {
+          "frontLotLine": {"min": 2.5, "units": "metres"},
+          "rearLotLine": {"min": 1.0, "units": "metres"},
+          "sideInteriorLotLine": {"min": 1.2, "units": "metres"},
+          "sideCollectorOrArterialStreet": {"min": 2.5, "units": "metres"}
+        },
+        "accessoryDwellingUnit": {
+          "frontLotLine": {"min": 2.5, "units": "metres", "note": "Not permitted in front yard"},
+          "rearLotLine": {"min": 1.5, "units": "metres"},
+          "sideInteriorLotLine": {"min": 1.2, "units": "metres"},
+          "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+        },
+        "accessoryDetachedGarage": {
+          "frontLotLine": {"note": "Not permitted in front yard"},
+          "rearLotLine": {"min": 0.6, "units": "metres"},
+          "sideInteriorLotLine": {"min": 0.6, "units": "metres", "note": "May be reduced to 0 with party wall agreement"},
+          "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+        }
+      }
+    },
+    "residentialZones": {
+      "R1B_R1C_R1D_R1E": {
+        "frontLoadedLot": {
+          "principalBuilding": {
+            "frontLotLine": {"min": 6.0, "max": 7.5, "units": "metres"},
+            "rearLotLine": {"min": 3.0, "units": "metres"},
+            "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+            "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+          },
+          "accessoryStructure": {
+            "footprintOver6m2": {
+              "frontLotLine": {"min": 6.0, "units": "metres", "note": "Not permitted in front yard"},
+              "rearLotLine": {"min": 1.5, "units": "metres"},
+              "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+              "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+            },
+            "footprintUnder6m2": {
+              "frontLotLine": {"min": 7.5, "units": "metres", "note": "Not permitted in front yard"},
+              "rearLotLine": {"min": 0.6, "units": "metres"},
+              "sideInteriorOrLaneOrLocalStreet": {"min": 0.6, "units": "metres"},
+              "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+            }
+          }
+        },
+        "rearLoadedLot": {
+          "principalBuilding": {
+            "frontLotLine": {"min": 3.5, "units": "metres"},
+            "rearLotLine": {"min": 1.0, "units": "metres"},
+            "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+            "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+          },
+          "accessoryStructure": {
+            "footprintOver6m2": {
+              "frontLotLine": {"min": 3.5, "units": "metres", "note": "Not permitted in front yard"},
+              "rearLotLine": {"min": 1.5, "units": "metres"},
+              "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+              "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+            },
+            "footprintUnder6m2": {
+              "frontLotLine": {"min": 6.0, "units": "metres", "note": "Not permitted in front yard"},
+              "rearLotLine": {"min": 0.6, "units": "metres"},
+              "sideInteriorOrLaneOrLocalStreet": {"min": 0.6, "units": "metres"},
+              "sideCollectorOrArterialStreet": {"min": 4.5, "units": "metres"}
+            }
+          }
+        }
+      },
+      "compactLotR_CL": {
+        "frontLoadedLot": {
+          "principalBuilding": {
+            "frontLotLine": {"min": 6.0, "max": 7.5, "units": "metres"},
+            "rearLotLine": {"min": 3.0, "units": "metres"},
+            "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+            "sideCollectorOrArterialStreet": {"min": 2.4, "units": "metres"}
+          },
+          "accessoryStructure": {
+            "frontLotLine": {"min": 6.0, "units": "metres", "note": "Not permitted in front yard"},
+            "rearLotLine": {"min": 0.6, "units": "metres"},
+            "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+            "sideCollectorOrArterialStreet": {"min": 2.4, "units": "metres"}
+          }
+        },
+        "rearLoadedLot": {
+          "principalBuilding": {
+            "frontLotLine": {"min": 2.5, "units": "metres"},
+            "rearLotLine": {"min": 1.0, "units": "metres"},
+            "sideInteriorOrLaneOrLocalStreet": {"min": 1.2, "units": "metres"},
+            "sideCollectorOrArterialStreet": {"min": 2.4, "units": "metres"}
+          },
+          "accessoryDetachedGarage": {
+            "rearLotLine": {"min": 0.6, "units": "metres"},
+            "sideInteriorOrLocalStreet": {"min": 0.6, "units": "metres", "note": "May be reduced to 0 with party wall agreement"},
+            "sideLaneOrCollectorOrArterialStreet": {"min": 1.2, "units": "metres"}
+          },
+          "otherAccessoryStructure": {
+            "frontLotLine": {"min": 2.5, "units": "metres", "note": "Not permitted in front yard"},
+            "rearLotLine": {"min": 0.6, "units": "metres"},
+            "sideInteriorOrLaneOrLocalStreet": {"min": 0.6, "units": "metres"},
+            "sideCollectorOrArterialStreet": {"min": 2.4, "units": "metres"}
+          }
+        }
+      }
+    }
+  },
+  "heightRestrictions": {
+    "explanation": "Maximum allowable height for different building types",
+    "infillHousingNearRearLotLine": {
+      "maxHeight": 4.5,
+      "units": "metres",
+      "applicability": "Within 6 metres of rear lot line, except coach houses fronting a lane"
+    },
+    "allOtherDwellingUnits": {
+      "maxHeight": 9.0,
+      "units": "metres"
+    },
+    "accessoryNonDwellingStructures": {
+      "maxHeight": 3.75,
+      "units": "metres"
+    },
+    "firstFloorElevation": {
+      "maxAboveAverageGrade": 0.8,
+      "units": "metres",
+      "exceptions": {
+        "slopeOver5Percent": {
+          "inGroundBasement": {
+            "maxExposure": 80,
+            "units": "percent"
+          },
+          "walkoutBasement": {
+            "atRearOfDwelling": "May be fully exposed"
+          }
+        }
+      }
+    },
+    "storeyRestrictions": {
+      "grossFloorAreaOver280m2": {
+        "conditions": [
+          "Where gross floor area of a single family dwelling is 280m² or greater",
+          "Includes all attached and detached garages/carports",
+          "Excludes basements where permitted"
+        ],
+        "maxHeight": "Two storeys plus a basement where permitted",
+        "secondStoreyRestriction": {
+          "maxFloorArea": 80,
+          "units": "percent of first storey gross floor area (including garages/carports)"
+        }
+      }
+    }
+  },
+  "lotCoverage": {
+    "explanation": "Maximum percentage of lot area that can be covered by buildings and structures",
+    "standard": {
+      "maxCoverage": 35,
+      "units": "percent of lot area"
+    },
+    "withInfillHousing": {
+      "maxCoverage": 45,
+      "units": "percent of lot area"
+    }
+  },
+  "thirdStoreyRestrictions": {
+    "explanation": "Restrictions on third storey floor area based on number of dwelling units on lot",
+    "oneOrTwoDwellingUnits": {
+      "maxFloorArea": 0,
+      "units": "percent of first storey floor area",
+      "note": "Third storey not permitted"
+    },
+    "threeDwellingUnits": {
+      "maxFloorArea": 50,
+      "units": "percent of first storey floor area"
+    },
+    "fourDwellingUnits": {
+      "maxFloorArea": 80,
+      "units": "percent of first storey floor area"
+    }
+  },
+  "compactLotZones": {
+    "explanation": "Special provisions for compact lot zones (R-CL)",
+    "lotAreaThresholds": {
+      "small": {
+        "maxAreaM2": 372,
+        "maxBuildingCoverage": 55,
+        "units": "percent",
+        "maxSingleFamilyFootprintM2": 150
+      },
+      "standard": {
+        "minAreaM2": 372,
+        "maxBuildingCoverage": 40,
+        "units": "percent",
+        "withInfillHousingCoverage": 45
+      }
+    },
+    "densityLimits": {
+      "maxLotsPerHectare": 24.7,
+      "maxLotsPerAcre": 10,
+      "exception": "May be exceeded when single family dwellings are replaced with small-scale multi-unit housing"
+    }
+  },
+  "zoningComplianceLogic": {
+    "smallScaleMultiUnitDevelopment": {
+      "checkEligibility": [
+        "Verify lot is within urban containment boundary",
+        "Verify lot area is less than 4,050 m²",
+        "Verify lot has municipal sanitary sewer and water services",
+        "Verify lot has no heritage designation protection from before Dec 7, 2023",
+        "Verify lot is not in Willowbrook Transit-Oriented Area",
+        "If lot area ≤ 280 m², maximum 3 dwelling units; otherwise maximum 4 dwelling units"
+      ],
+      "checkSetbacks": [
+        "Determine if lot is front-loaded or rear-loaded",
+        "Determine zoning (R1A, R1B-E, R-CL, etc.)",
+        "Apply appropriate setbacks based on building type, lot configuration, and zone",
+        "If corner lot, apply sight triangle restrictions",
+        "If accessory structure <6m², apply reduced setbacks",
+        "If abutting lots with accessory garages, check party wall agreement provisions",
+        "If lot fronts two parallel streets, rear setback equals front setback",
+        "Check for projecting features (stairs, porches, verandahs, balconies) and apply reduced setbacks if applicable"
+      ],
+      "checkHeight": [
+        "Apply 4.5m height limit to infill housing near rear lot line",
+        "Apply 9.0m height limit to all other dwelling units",
+        "Apply 3.75m height limit to accessory structures that are not dwelling units"
+      ],
+      "checkLotCoverage": [
+        "Apply 35% standard coverage limit",
+        "If infill housing is present, may increase to 45%",
+        "For compact lot zones with area <372m², apply 55% coverage limit with 150m² max single family dwelling footprint",
+        "For compact lot zones with area ≥372m², apply 40% standard coverage or 45% with infill housing"
+      ],
+      "checkThirdStorey": [
+        "If 1-2 dwelling units: third storey not permitted",
+        "If 3 dwelling units: third storey max 50% of first storey area",
+        "If 4 dwelling units: third storey max 80% of first storey area"
+      ],
+      "checkParking": [
+        "Minimum 1 space per dwelling unit",
+        "Minimum 2 spaces per lot",
+        "If in Transit-Oriented Area, check exemption for residential parking",
+        "For corner lots with ≥3 units, up to 2 additional driveways from side lot line if conditions met",
+        "For rear-loaded lots, all parking must be in rear yard with access from lane only",
+        "Check sight triangle restrictions for parking spaces on corner lots",
+        "Verify driveway locations are coordinated for on-street parking and street trees",
+        "Parking spaces may extend into municipal dedication but not beyond back of sidewalk/lane"
+      ],
+      "checkSpecialZoneProvisions": [
+        "For CD (Comprehensive Development) zones, check specific provisions that may allow SSMUH",
+        "For SR (Suburban Residential) zones, check if outside urban containment boundary",
+        "For R-CL (Residential Compact Lot) zones, apply specific density and coverage requirements"
+      ],
+      "checkAccessoryDwellingUnits": [
+        "Ensure single family dwelling does not include a secondary suite if there's an accessory dwelling unit",
+        "For coach houses, verify located only in second storey of detached garage"
+      ]
+    }
+  },
+  "zoningAreas": {
+    "suburbanResidential": {
+      "SR1": {
+        "allowsSSMUH": true,
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ]
+      },
+      "SR2": {
+        "allowsSSMUH": false,
+        "options": [
+          "One single family dwelling or mobile home",
+          "One accessory dwelling unit if outside urban containment boundary and no secondary suite"
+        ]
+      },
+      "SR3": {
+        "allowsSSMUH": true,
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ]
+      },
+      "SR3A": {
+        "allowsSSMUH": false,
+        "options": [
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ]
+      }
+    },
+    "residentialZones": {
+      "R1A": {
+        "allowsSSMUH": true,
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ],
+        "lotCoverage": {
+          "standard": 35,
+          "withInfillHousing": 45,
+          "units": "percent"
+        },
+        "buildingHeight": {
+          "infillHousingNearRear": 4.5,
+          "otherDwellingUnits": 9.0,
+          "accessoryNonDwellingStructures": 3.75,
+          "units": "metres"
+        }
+      },
+      "R1B_R1C_R1D_R1E": {
+        "allowsSSMUH": true,
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ],
+        "lotCoverage": {
+          "standard": 35,
+          "withInfillHousing": 45,
+          "units": "percent"
+        },
+        "buildingHeight": {
+          "infillHousingNearRear": 4.5,
+          "otherDwellingUnits": 9.0,
+          "accessoryNonDwellingStructures": 3.75,
+          "units": "metres"
+        },
+        "setbacks": "See residentialZones.R1B_R1C_R1D_R1E in setbacks section",
+        "thirdStoreyRestrictions": {
+          "oneOrTwoDwellingUnits": "None permitted",
+          "threeDwellingUnits": "50% of first storey floor area",
+          "fourDwellingUnits": "80% of first storey floor area"
+        }
+      },
+      "R2": {
+        "allowsSSMUH": true,
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One two family dwelling",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ],
+        "lotCoverage": {
+          "standard": 35,
+          "withInfillHousing": 45,
+          "units": "percent"
+        },
+        "buildingHeight": {
+          "infillHousingNearRear": 4.5,
+          "otherDwellingUnits": 9.0,
+          "accessoryNonDwellingStructures": 3.75,
+          "units": "metres"
+        },
+        "thirdStoreyRestrictions": {
+          "oneOrTwoDwellingUnits": "None permitted",
+          "threeDwellingUnits": "50% of first storey floor area",
+          "fourDwellingUnits": "80% of first storey floor area"
+        }
+      },
+      "R_CL": {
+        "explanation": "Residential Compact Lot Zone",
+        "allowsSSMUH": true,
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ],
+        "density": {
+          "maxLotsPerHectare": 24.7,
+          "maxLotsPerAcre": 10,
+          "exceptions": [
+            "May be exceeded where single family dwellings are replaced with SSMUH",
+            "In Southwest Gordon, Routley and Yorkson Neighbourhood Plan areas, density shall be in accordance with Willoughby Community Plan"
+          ]
+        },
+        "lotCoverage": {
+          "smallLot": {
+            "threshold": 372,
+            "maxCoverage": 55,
+            "maxSingleFamilyFootprint": 150,
+            "units": "square metres",
+            "excludesFromCoverage": ["Covered porches", "Covered verandahs", "Covered sun decks"]
+          },
+          "standardLot": {
+            "threshold": 372,
+            "maxCoverage": 40,
+            "withInfillHousing": 45,
+            "units": "percent",
+            "excludesFromCoverage": ["Covered porches", "Covered verandahs", "Covered sun decks"]
+          }
+        },
+        "thirdStoreyRestrictions": {
+          "oneOrTwoDwellingUnits": "50% of first storey floor area",
+          "threeOrFourDwellingUnits": "80% of first storey floor area"
+        }
+      },
+      "R_CLA": {
+        "explanation": "Residential Compact Lot Zone A",
+        "allowsSSMUH": true,
+        "densityCompliance": "Maximum density shall comply with Community or Neighbourhood Plan",
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ],
+        "thirdStoreyRestrictions": {
+          "oneOrTwoDwellingUnits": "50% of first storey floor area",
+          "threeOrFourDwellingUnits": "80% of first storey floor area"
+        }
+      },
+      "R_CLB": {
+        "explanation": "Residential Compact Lot Zone B",
+        "allowsSSMUH": true,
+        "densityCompliance": "Maximum density shall comply with Community or Neighbourhood Plan",
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling plus one accessory dwelling unit (without secondary suite)"
+        ],
+        "thirdStoreyRestrictions": {
+          "oneOrTwoDwellingUnits": "50% of first storey floor area",
+          "threeOrFourDwellingUnits": "80% of first storey floor area"
+        }
+      },
+      "R_CLCH": {
+        "explanation": "Residential Compact Lot Coach House Zone",
+        "allowsSSMUH": true,
+        "densityCompliance": "Maximum density shall comply with Community or Neighbourhood Plan",
+        "options": [
+          "One small-scale multi-unit housing development",
+          "One single family dwelling and one coach house"
+        ],
+        "thirdStoreyRestrictions": {
+          "oneOrTwoDwellingUnits": "50% of first storey floor area",
+          "threeOrFourDwellingUnits": "80% of first storey floor area"
+        }
+      }
+    },
+    "comprehensiveDevelopmentZones": {
+      "allowedInZones": [
+        "CD-4", "CD-7", "CD-12", "CD-20", "CD-21", "CD-38C", "CD-53", 
+        "CD-54", "CD-55", "CD-56", "CD-58", "CD-70", "CD-73", "CD-85", 
+        "CD-86", "CD-91", "CD-127", "CD-133"
+      ],
+      "specificProvisions": {
+        "CD-7": {
+          "maxUnits": 84,
+          "exception": "Density may be exceeded for small-scale multi-unit housing development"
+        },
+        "CD-20": {
+          "maxDensity": "24.7 units per ha/10 units per acre plus 6 additional units",
+          "maxSingleFamilyLots": 109,
+          "exception": "Density may be exceeded for small-scale multi-unit housing development"
+        },
+        "CD-21": {
+          "maxDensity": "29.7 units per ha/12 units per acre",
+          "exception": "Density may be exceeded for small-scale multi-unit housing development"
+        },
+        "CD-73": {
+          "maxDensity": "87 units per hectare (35 units per acre)",
+          "exception": "Density may be exceeded for small-scale multi-unit housing development"
+        },
+        "CD-127": {
+          "specificAllocation": "82 apartments and 5 small-scale multi-unit housing developments"
+        }
+      }
+    },
+    "transitOrientedAreas": {
+      "willowbrookDesignation": "Bylaw No. 6021",
+      "parkingExemption": true,
+      "SSMUHNotAllowed": true
+    }
+  }
+}

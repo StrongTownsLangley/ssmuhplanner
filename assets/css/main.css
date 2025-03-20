@@ -1,0 +1,67 @@
+/**
+ * SSMUH Planner - Main CSS Styles
+ */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Card styles */
+.card {
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+.form-label {
+  font-weight: 500;
+}
+
+/* Canvas styles */
+#lotCanvas {
+  min-height: 400px;
+  background-color: #f8f9fa;
+}
+
+/* Structure styles */
+.structure {
+  position: absolute;
+  cursor: move;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Setback styles */
+.setback-zone {
+  pointer-events: none;
+}
+
+.setback-label {
+  font-size: 10px;
+  color: #f00;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Styles for disabled sections */
+.disabled-section {
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+
+.disabled-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(200, 200, 200, 0.1);
+  z-index: 1000;
+}
