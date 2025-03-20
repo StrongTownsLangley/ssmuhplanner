@@ -19,7 +19,7 @@ function checkSetbackViolation(structure) {
   
   // Get relevant setback values based on structure type
   let relevantSetbacks;
-  if (structure.type === 'accessory' || structure.type === 'coach') {
+  if (structure.type === 'accessoryDwellingUnit' || structure.type === 'coach') {
     relevantSetbacks = appState.setbacks.accessoryDwellingUnit || appState.setbacks.principalBuilding;
   } else if (structure.type === 'garage' && appState.setbacks.accessoryDetachedGarage) {
     relevantSetbacks = appState.setbacks.accessoryDetachedGarage;
