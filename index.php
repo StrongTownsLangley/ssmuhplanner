@@ -44,12 +44,13 @@ const ssmuhRules = <?php echo json_encode($ssmuhRules); ?>;
   <div class="col-md-12">
     <div class="card mb-4">
       <div class="card-header">
-      <h3>Township of Langley SSMUH Overview</h3>
+      <h3>Township of Langley SSMUH Planning Tool Introduction</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body">        
         <p>Small-Scale Multi-Unit Housing (SSMUH) allows for up to four dwelling units (attached or detached) on a single lot, subject to certain conditions.</p>
-        <p>Based on the current <a href="<?php echo $isStandalone ? 'sources/2024-11-18 Langley (Township) SSMUH Bylaw.pdf' : '/ssmuhplanner/sources/2024-11-18 Langley (Township) SSMUH Bylaw.pdf'; ?>" target="_blank">Township of Langley SSMUH Bylaw</a> (and arterial road amendment upon adoption) we have created this simple planning tool to help figuring out what is now possible on your single family lot!</p>        
-        <p style="font-weight:bold">Note: This is just provided for guidance only and may not be 100% accurate, please verify with Township of Langley staff before applying to build a SSMUH unit. You can also find information on the <a href="https://www.tol.ca/en/the-township/small-scale-multi-unit-housing.aspx" target="_blank">official SSMUH page on the Township of Langley website</a>.</p>
+        <p>This planning tool has been created to help figuring out what is now possible on various types of single family lots. Source code is available on our <a href="https://github.com/StrongTownsLangley/ssmuhplanner/" target="_blank">GitHub Repository</a>.
+        <p>Based on the current <a href="<?php echo $isStandalone ? 'sources/2024-11-18 Langley (Township) SSMUH Bylaw.pdf' : '/ssmuhplanner/sources/2024-11-18 Langley (Township) SSMUH Bylaw.pdf'; ?>" target="_blank">Township of Langley SSMUH Bylaw</a> (and <a href="<?php echo $isStandalone ? 'sources/2024-11-18 Council Meeting Minutes.pdf' : '/ssmuhplanner/sources/2024-11-18 Council Meeting Minutes.pdf'; ?>" target="_blank">arterial road amendment</a> upon adoption).</p>        
+        <p style="font-weight:bold">Note: This is just provided for guidance only and may not be 100% accurate, please verify with Township of Langley staff before applying to build SSMUH unit(s). You can also find information on the <a href="https://www.tol.ca/en/the-township/small-scale-multi-unit-housing.aspx" target="_blank">official SSMUH page on the Township of Langley website</a>.</p>
 
         <h4>Key Requirements:</h4>
         <ul>
