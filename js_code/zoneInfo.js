@@ -203,17 +203,42 @@ function displayZoneInfo(zoneType) {
   
   // Lot coverage information
   htmlContent += '<h4>Lot Coverage</h4>';
+  const isInfillPresent = window.ssmuhPlanner && window.ssmuhPlanner.appState ? 
+                        window.ssmuhPlanner.appState.isInfillPresent : false;
+                        
   if (zoneType === 'R-CL' || zoneType === 'R-CLA' || zoneType === 'R-CLB' || zoneType === 'R-CLCH') {
     htmlContent += '<p><strong>Compact Lot Zone Rules:</strong></p>';
     htmlContent += '<ul>';
     htmlContent += `<li>Small lots (≤ ${ssmuhRules.compactLotZones.lotAreaThresholds.small.maxAreaM2}m²): ${ssmuhRules.compactLotZones.lotAreaThresholds.small.maxBuildingCoverage}% max coverage</li>`;
-    htmlContent += `<li>Standard lots (> ${ssmuhRules.compactLotZones.lotAreaThresholds.small.maxAreaM2}m²): ${ssmuhRules.compactLotZones.lotAreaThresholds.standard.maxBuildingCoverage}% standard, ${ssmuhRules.compactLotZones.lotAreaThresholds.standard.withInfillHousingCoverage}% with infill housing</li>`;
+    
+    const standardCoverage = ssmuhRules.compactLotZones.lotAreaThresholds.standard.maxBuildingCoverage;
+    const infillCoverage = ssmuhRules.compactLotZones.lotAreaThresholds.standard.withInfillHousingCoverage;
+    
+    if (isInfillPresent) {
+      htmlContent += `<li>Standard lots (> ${ssmuhRules.compactLotZones.lotAreaThresholds.small.maxAreaM2}m²): <s>${standardCoverage}%</s> <strong>${infillCoverage}%</strong> with infill housing (applies)</li>`;
+    } else {
+      htmlContent += `<li>Standard lots (> ${ssmuhRules.compactLotZones.lotAreaThresholds.small.maxAreaM2}m²): ${standardCoverage}% standard, ${infillCoverage}% with infill housing</li>`;
+    }
     htmlContent += '</ul>';
   } else {
     htmlContent += '<ul>';
-    htmlContent += `<li>Standard: ${ssmuhRules.lotCoverage.standard.maxCoverage}% of lot area</li>`;
-    htmlContent += `<li>With Infill Housing: ${ssmuhRules.lotCoverage.withInfillHousing.maxCoverage}% of lot area</li>`;
+    const standardCoverage = ssmuhRules.lotCoverage.standard.maxCoverage;
+    const infillCoverage = ssmuhRules.lotCoverage.withInfillHousing.maxCoverage;
+    
+    if (isInfillPresent) {
+      htmlContent += `<li>Standard: <s>${standardCoverage}%</s> of lot area</li>`;
+      htmlContent += `<li>With Infill Housing: <strong>${infillCoverage}%</strong> of lot area (applies)</li>`;
+    } else {
+      htmlContent += `<li>Standard: ${standardCoverage}% of lot area</li>`;
+      htmlContent += `<li>With Infill Housing: ${infillCoverage}% of lot area</li>`;
+    }
     htmlContent += '</ul>';
+  }
+
+  if (isInfillPresent) {
+    htmlContent += '<div class="alert alert-info mt-2" style="font-size: 0.9rem;">';
+    htmlContent += '<strong>Infill Housing:</strong> Your existing dwelling built before June 10, 2024 qualifies for increased lot coverage.';
+    htmlContent += '</div>';
   }
   
   htmlContent += '</div>';

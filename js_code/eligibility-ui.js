@@ -20,7 +20,8 @@ function setupEligibilityChangeListeners() {
 	  document.getElementById('isArterialRoad'),
 	  document.getElementById('withinUCB'),
 	  document.getElementById('hasHeritage'),
-	  document.getElementById('inWillowbrook')
+	  document.getElementById('inWillowbrook'),
+	  document.getElementById('hasExistingDwelling'),
 	];
 	
 	// Add change event listeners to all form elements
@@ -63,10 +64,20 @@ function displayEligibilityResult(result) {
 	  if (result.isEligible && result.zoneAllowsSSMUH) {
 		if (result.hasWarnings) {
 		  eligibilityAlert.className = 'alert alert-warning';
-		  eligibilityAlert.innerHTML = `Your property is eligible for SSMUH with up to ${appState.maxUnits} units, but may require special approvals: ${result.warningMessage}`;
+		  eligibilityAlert.innerHTML = `Your may require special approvals - ${result.warningMessage}, but may still be eligible for SSMUH with up to ${appState.maxUnits} units`;
 		} else {
 		  eligibilityAlert.className = 'alert alert-success';
-		  eligibilityAlert.textContent = `Your property is eligible for SSMUH with up to ${appState.maxUnits} units.`;
+		  eligibilityAlert.textContent = `Your property is eligible for SSMUH with up to ${appState.maxUnits} units`;
+		}
+		
+		// Add infill housing note if applicable
+		if (appState.isInfillPresent) {
+		  const maxCoverage = calculateMaxCoverage();
+		  const standardCoverage = appState.zoneType.startsWith('R-CL') ? 
+		    ssmuhRules.compactLotZones.lotAreaThresholds.standard.maxBuildingCoverage : 
+		    ssmuhRules.lotCoverage.standard.maxCoverage;
+		    
+			eligibilityAlert.textContent += ` and qualifies for increased lot coverage due to the existing dwelling (infill housing).`;		  
 		}
 		
 		// Enable lot builder and zone info sections

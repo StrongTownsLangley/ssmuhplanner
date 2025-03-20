@@ -116,7 +116,7 @@ function updateLotStats() {
   // Calculate total units and building area
   appState.totalUnits = structures.reduce((sum, s) => sum + s.units, 0);
   appState.totalBuildingArea = structures.reduce((sum, s) => sum + (s.width * s.depth), 0);
-  appState.isInfillPresent = structures.some(s => s.type === 'infill');
+  //appState.isInfillPresent = structures.some(s => s.type === 'infill');
   
   // Calculate building coverage percentage
   const coveragePercent = appState.lotAreaM2 > 0 ? (appState.totalBuildingArea / appState.lotAreaM2) * 100 : 0;

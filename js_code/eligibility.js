@@ -85,6 +85,8 @@ function updateLotInfo() {
  */
 function calculateMaxCoverage() {
   // Default coverage
+  console.log("calc max cov");
+  console.log(appState);
   let maxCoverage = ssmuhRules.lotCoverage.standard.maxCoverage;
   
   // Apply compact lot zone rules if applicable
