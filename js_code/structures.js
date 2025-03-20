@@ -119,8 +119,8 @@ function getStructureColor(type) {
   switch(type) {
     case 'principal': return '#007bff';
     case 'secondary': return '#6610f2';
-    case 'infill': return '#6f42c1';
-    case 'accessory': return '#e83e8c';
+    case 'multiplex': return '#6f42c1';
+    case 'accessoryDwellingUnit': return '#e83e8c';
     case 'coach': return '#dc3545';
     case 'garage': return '#fd7e14';
     default: return '#6c757d';
