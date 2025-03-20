@@ -79,8 +79,8 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="hasExistingDwelling">
-                  <label class="form-check-label" for="hasExistingDwelling">Lot already contains a detached single or two family house built before June 10, 2024</label>
-                  <div class="form-text">Properties with existing dwellings are eligible for infill housing with increased lot coverage.</div>
+                  <label class="form-check-label" for="hasExistingDwelling">Lot contains a detached single or two family house built before June 10, 2024</label>
+                  <div class="form-text">If this existing dwelling is retained the lot is eligible for "infill housing" with increased lot coverage but with some height restrictions.</div>
                 </div>                
               </div>
             </div>
