@@ -33,7 +33,7 @@ function validateEligibility() {
 	// Check arterial road warning
 	if (appState.isArterialRoad) {
 	  result.hasWarnings = true;
-	  result.warningMessage += 'Check Bylaw Setback requirements as Collector/Arterial setbacks differ depending on the side facing the road. Board of Variance approval is required if vehicular access is from an arterial road. ';
+	  result.warningMessage += 'check bylaw setback requirements as collector/arterial setbacks differ depending on the side facing the road, and board of variance approval is required if vehicular access is from an arterial road';
 	}
 	
 	// Check required services
@@ -129,18 +129,21 @@ function validateEligibility() {
    * Update application state from form values
    */
   function updateAppStateFromForm() {
+	console.log("updateAppStateFromForm");
 	appState.lotWidth = parseFloat(document.getElementById('lotWidth').value) || 0;
 	appState.lotDepth = parseFloat(document.getElementById('lotDepth').value) || 0;
 	appState.zoneType = document.getElementById('zoneType').value;
 	appState.loadingType = document.getElementById('loadingType').value;
 	appState.isCornerLot = document.getElementById('isCornerLot').checked;
 	appState.isArterialRoad = document.getElementById('isArterialRoad').checked;
-	
+	appState.isInfillPresent = document.getElementById('hasExistingDwelling').checked;
+
 	// Calculate derived values
 	appState.lotAreaM2 = appState.lotWidth * appState.lotDepth;
 	appState.maxUnits = calculateMaxUnits();
 	appState.zoneInfo = getZoneInfo(appState.zoneType);
 	appState.setbacks = getSetbacksForZone(appState.zoneType, appState.loadingType);
+	console.log(appState);
   }
   
   // Export functions
