@@ -102,6 +102,7 @@ const ssmuhRules = <?php echo json_encode($ssmuhRules); ?>;
               <option value="accessoryDwellingUnit">Accessory Dwelling Unit</option>
               <option value="coach">Coach House</option>
               <option value="garage">Detached Garage</option>
+              <option value="multiplex">Multiplex</option>
               <option value="other">Other Structure</option>
             </select>
             <div class="form-text small" id="structureTypeHelp"></div>
@@ -125,7 +126,7 @@ const ssmuhRules = <?php echo json_encode($ssmuhRules); ?>;
           </div>
           <div class="mb-3">
             <label for="structureUnits" class="form-label">Number of Units</label>
-            <input type="number" class="form-control" id="structureUnits" min="1" max="4" value="1" required>
+            <input type="number" class="form-control" id="structureUnits" min="0" max="4" value="1" required>
           </div>
           <input type="hidden" id="structureId" value="">
           <input type="hidden" id="editMode" value="add">
