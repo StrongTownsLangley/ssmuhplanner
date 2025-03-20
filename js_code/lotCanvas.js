@@ -130,8 +130,8 @@ function renderLotCanvas() {
  */
 function enableDragAndDrop(lotCanvas, lotDiv, scale) {
   // Check if listeners are already attached
-  if (lotCanvas.hasAttribute('data-listeners-attached')) {
-    return; // Skip if already attached
+  if (lotCanvas.hasAttribute('data-listeners-attached')) {    
+    return;
   }
   
   // Make lot canvas a drop target
@@ -152,26 +152,56 @@ function enableDragAndDrop(lotCanvas, lotDiv, scale) {
       const structure = structures.find(s => s.id === structureId);
       if (!structure) return;
       
-      // Get the current structure DIV to determine position relative to its parent
-      const structureDiv = document.getElementById('structure-' + structureId);
-      if (!structureDiv) return;
+      // Get the REAL lot rect directly
+      const lotRect = lotDiv.getBoundingClientRect();
       
-      // Get the parent lot DIV
-      const lotDivElement = structureDiv.parentElement;
-      if (!lotDivElement) return;
+      console.log("Drop calculation - lotRect:", {
+        left: lotRect.left,
+        top: lotRect.top,
+        width: lotRect.width,
+        height: lotRect.height
+      });
       
-      // Get the rects
-      const lotRect = lotDivElement.getBoundingClientRect();
+      // If the lotRect is incorrect (0,0) try an alternative approach
+      if (lotRect.left === 0 && lotRect.top === 0) {
+        // This is a fallback for when getBoundingClientRect is not reliable
+        // Try to use the canvas position and the lot position within the canvas
+        const canvasRect = lotCanvas.getBoundingClientRect();
+        const lotLeft = canvasRect.left + parseInt(lotDiv.style.left.replace('px', ''));
+        const lotTop = canvasRect.top + parseInt(lotDiv.style.top.replace('px', ''));
+        
+        console.log("Using fallback positioning:", {
+          canvasLeft: canvasRect.left,
+          canvasTop: canvasRect.top,
+          lotStyleLeft: lotDiv.style.left,
+          lotStyleTop: lotDiv.style.top,
+          calculatedLotLeft: lotLeft,
+          calculatedLotTop: lotTop
+        });
+        
+        // Calculate position using fallback coordinates
+        const newX = (e.clientX - lotLeft - offsetX) / scale;
+        const newY = (e.clientY - lotTop - offsetY) / scale;
+        
+        // Constrain to lot boundaries
+        structure.x = Math.max(0, Math.min(appState.lotWidth - structure.width, newX));
+        structure.y = Math.max(0, Math.min(appState.lotDepth - structure.depth, newY));
+      } else {
+        // Use the normal calculation with the proper lotRect
+        const newX = (e.clientX - lotRect.left - offsetX) / scale;
+        const newY = (e.clientY - lotRect.top - offsetY) / scale;
+        
+        // Constrain to lot boundaries
+        structure.x = Math.max(0, Math.min(appState.lotWidth - structure.width, newX));
+        structure.y = Math.max(0, Math.min(appState.lotDepth - structure.depth, newY));
+      }
       
-      console.log("Found actual lotRect:", lotRect);
-      
-      // Calculate new position in meters
-      const newX = (e.clientX - lotRect.left - offsetX) / scale;
-      const newY = (e.clientY - lotRect.top - offsetY) / scale;
-      
-      // Constrain to lot boundaries
-      structure.x = Math.max(0, Math.min(appState.lotWidth - structure.width, newX));
-      structure.y = Math.max(0, Math.min(appState.lotDepth - structure.depth, newY));
+      console.log("Final calculated position:", {
+        id: structure.id,
+        x: structure.x,
+        y: structure.y,
+        scale: scale
+      });
       
       // Check for setback violation
       const violatesSetbacks = checkSetbackViolation(structure);
@@ -179,6 +209,7 @@ function enableDragAndDrop(lotCanvas, lotDiv, scale) {
       // Update the structure list item to show setback violation status
       updateStructureListItem(structure, violatesSetbacks);
       
+      // Re-render the canvas to show the updated position
       renderLotCanvas();
     } catch (error) {
       console.error('Error in drop handler:', error);
@@ -392,6 +423,7 @@ function renderStructure(structure, lotDiv, scale) {
   });
   const structureDiv = document.createElement('div');
   structureDiv.id = 'structure-' + structure.id;
+  structureDiv.className = 'draggable-structure'; // Add a class for easier selection
   structureDiv.style.position = 'absolute';
   structureDiv.style.left = structure.x * scale + 'px';
   structureDiv.style.top = structure.y * scale + 'px';
@@ -433,6 +465,10 @@ function renderStructure(structure, lotDiv, scale) {
     warningIcon.title = 'Structure violates setback requirements';
     structureDiv.appendChild(warningIcon);
   }
+  
+  // Store the structure ID and scale as data attributes for easy access
+  structureDiv.dataset.structureId = structure.id;
+  structureDiv.dataset.scale = scale;
   
   // Make draggable
   structureDiv.draggable = true;
