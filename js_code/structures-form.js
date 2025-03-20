@@ -13,6 +13,10 @@ function onStructureTypeChange() {
   
   if (!helpText) return;
   
+  if (type === 'secondary') {    
+    document.getElementById('structureUnits').value = 2;
+  }
+
   // Display structure type information from the bylaw
   if (type in ssmuhRules.buildingTypes) {
     const structureInfo = ssmuhRules.buildingTypes[type];
@@ -29,10 +33,7 @@ function onStructureTypeChange() {
     if (type === 'accessoryDwellingUnit' && structureInfo.allowedWhen) {
       helpText.innerHTML += `<br>Note: ${structureInfo.allowedWhen}`;
     }
-    
-    if (type === 'infill' && structureInfo.retainedDwellingRequirement) {
-      helpText.innerHTML += `<br>Note: ${structureInfo.retainedDwellingRequirement}`;
-    }
+
   } else if (type === 'garage') {
     helpText.innerHTML = 'A detached garage for vehicle parking.';
   } else if (type === 'other') {
@@ -93,13 +94,16 @@ function onStructureStoriesChange() {
     helpText.innerHTML = '';
   }
   
+  console.log("onStructureStoriesChange");
+  console.log(structureType);
+  console.log(appState);
   // Special height restrictions for infill housing
-  if (structureType === 'infill' && appState.loadingType === 'front') {
+  if (structureType === 'accessoryDwellingUnit' && appState.isInfillPresent && appState.loadingType === 'front') {
     const infillMaxHeight = ssmuhRules.heightRestrictions.infillHousingNearRearLotLine.maxHeight;
     const applicability = ssmuhRules.heightRestrictions.infillHousingNearRearLotLine.applicability;
-    
+    console.log("stories " + stories);
     if (stories > 1) {
-      helpText.innerHTML += `<br><span class="text-warning">Note: Infill housing ${applicability} is limited to ${infillMaxHeight}m height (approx. 1 storey)</span>`;
+      helpText.innerHTML += `<br><span class="text-warning">Note: When qualifying for infill housing with an existing dwelling unit, Accessory Units ${applicability} are limited to ${infillMaxHeight}m height (approx. 1 storey)</span>`;
     }
   }
 }
