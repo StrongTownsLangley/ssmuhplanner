@@ -123,25 +123,8 @@ function updateLotStats() {
   buildingCoverageSpan.textContent = coveragePercent.toFixed(1);
   
   // Get lot coverage data from JSON
-  let maxCoverage = ssmuhRules.lotCoverage.standard.maxCoverage;
-  
-  if (appState.isInfillPresent) {
-    maxCoverage = ssmuhRules.lotCoverage.withInfillHousing.maxCoverage;
-  }
-  
-  // Apply compact lot zone rules if applicable
-  if (appState.zoneType === 'R-CL' || appState.zoneType === 'R-CLA' || appState.zoneType === 'R-CLB' || appState.zoneType === 'R-CLCH') {
-    if (appState.lotAreaM2 <= ssmuhRules.compactLotZones.lotAreaThresholds.small.maxAreaM2) {
-      maxCoverage = ssmuhRules.compactLotZones.lotAreaThresholds.small.maxBuildingCoverage;
-    } else {
-      maxCoverage = appState.isInfillPresent ? 
-                   ssmuhRules.compactLotZones.lotAreaThresholds.standard.withInfillHousingCoverage : 
-                   ssmuhRules.compactLotZones.lotAreaThresholds.standard.maxBuildingCoverage;
-    }
-  }
-  
-  maxCoverageSpan.textContent = maxCoverage;
-  
+  let maxCoverage = calculateMaxCoverage();
+
   // Required parking (minimum 2 spaces or 1 per unit, whichever is greater)
   const spacesPerUnit = ssmuhRules.parkingRequirements.residential.spacesPerDwellingUnit;
   const minSpaces = ssmuhRules.parkingRequirements.residential.minimumSpacesPerLot;
@@ -157,7 +140,7 @@ function updateLotStats() {
     }
   }
   
-  if (coveragePercent > parseInt(maxCoverageSpan.textContent)) {
+  if (coveragePercent > maxCoverage) {
     buildingCoverageSpan.parentElement.classList.add('text-danger');
   }
   else {
