@@ -33,7 +33,7 @@ function validateEligibility() {
 	// Check arterial road warning
 	if (appState.isArterialRoad) {
 	  result.hasWarnings = true;
-	  result.warningMessage += 'Board of Variance approval is required if vehicular access is from an arterial road. ';
+	  result.warningMessage += 'Check Bylaw Setback requirements as Collector/Arterial setbacks differ depending on the side facing the road. Board of Variance approval is required if vehicular access is from an arterial road. ';
 	}
 	
 	// Check required services
