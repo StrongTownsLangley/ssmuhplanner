@@ -99,7 +99,6 @@ const ssmuhRules = <?php echo json_encode($ssmuhRules); ?>;
             <select class="form-control" id="structureType">
               <option value="principal">Principal Dwelling</option>
               <option value="secondary">Secondary Suite</option>
-              <option value="infill">Infill Housing</option>
               <option value="accessory">Accessory Dwelling Unit</option>
               <option value="coach">Coach House</option>
               <option value="garage">Detached Garage</option>
