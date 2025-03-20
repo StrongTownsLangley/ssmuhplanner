@@ -12,7 +12,7 @@ SSMUH Planner is an interactive web tool that helps property owners visualize an
 - Calculate building coverage and parking requirements
 - Ensure compliance with Township zoning requirements
 
-The Bylaws and Council Minutes are available in the **sources** folder.
+The Bylaws and Council Minutes are available in the **sources** folder. The Official Township of Langley SSMUH website is https://www.tol.ca/en/the-township/small-scale-multi-unit-housing.aspx
 
 Try it online: [SSMUH Planner on Strong Towns Langley](https://strongtownslangley.org/ssmuh)
 
