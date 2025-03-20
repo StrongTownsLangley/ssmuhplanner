@@ -17,6 +17,14 @@ function onStructureTypeChange() {
     document.getElementById('structureUnits').value = 2;
   }
 
+  if (type === 'multiplex') {    
+    document.getElementById('structureUnits').value = 3;
+  }
+
+  if (type === 'garage' || type == 'other' ) {    
+    document.getElementById('structureUnits').value = 0;
+  }
+
   // Display structure type information from the bylaw
   if (type in ssmuhRules.buildingTypes) {
     const structureInfo = ssmuhRules.buildingTypes[type];
