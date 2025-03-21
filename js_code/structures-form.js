@@ -283,7 +283,7 @@ function saveStructure() {
   // Update appState with structures info
   appState.totalUnits = structures.reduce((sum, s) => sum + s.units, 0);
   appState.totalBuildingArea = structures.reduce((sum, s) => sum + (s.width * s.depth), 0);
-  appState.isInfillPresent = structures.some(s => s.type === 'infill');
+  //appState.isInfillPresent = structures.some(s => s.type === 'infill');
   
   // Update lot canvas
   if (typeof renderLotCanvas === 'function') {
